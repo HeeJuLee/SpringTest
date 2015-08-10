@@ -1,4 +1,4 @@
-package springbook.user.dao;
+package springbook.user.domain;
 
 public class User {
 	String	id;
