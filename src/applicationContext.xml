@@ -14,4 +14,12 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
     
+     <bean id="groupMemberDao" class="springbook.user.dao.GroupMemberDao">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+     <bean id="groupDao" class="springbook.user.dao.GroupDao">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
 </beans>

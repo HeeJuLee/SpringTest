@@ -17,6 +17,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import springbook.user.domain.Level;
 import springbook.user.domain.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,13 +39,13 @@ public class UserDaoTest {
 		
 		//this.dao = context.getBean("userDao", UserDao.class);
 		
-		user1 = new User("gyumee", "박성철", "springno1");
-		user2 = new User("leegw700", "이길원", "springno2");
-		user3 = new User("bumjin", "박범진", "springno3");
+		user1 = new User("gyumee", "박성철", "springno1", Level.BASIC, 1, 0);
+		user2 = new User("leegw700", "이길원", "springno2", Level.SILVER, 55, 10);
+		user3 = new User("bumjin", "박범진", "springno3", Level.GOLD, 100, 40);
 	}
 	
 	@Test
-	public void andAndGet() throws ClassNotFoundException, SQLException {
+	public void addAndGet() throws ClassNotFoundException, SQLException {
 		
 		dao.deleteAll();
 		assertThat(dao.getCount(), is(0));
@@ -94,6 +95,11 @@ public class UserDaoTest {
 		
 		dao.add(user1);
 		dao.add(user1);
+	}
+	
+	@Test
+	public void checkSameUser(User user1, User user2) {
+		
 	}
 	
 	public static void main(String[] args) {
